@@ -151,6 +151,20 @@ footer {
 
 /* css detalle evento */
 
+.evento-container{
+    
+    display: grid;
+    /* flex-direction: column; */
+    gap: 1vh;
+    
+    padding: 1vh;
+    margin: 1vh ;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+}
+
 .detalle-container {
     display: flex;
     justify-content: center;
@@ -194,10 +208,12 @@ footer {
 
     position: relative;
     text-decoration: none;
-
+    align-items: center;
+    text-align: center;
     font-family: Poppins;
     font-size: 3em;
     color: var(--primary-color);
+    left: 550px;
 }
 
 .detalle-event-text a::after {
