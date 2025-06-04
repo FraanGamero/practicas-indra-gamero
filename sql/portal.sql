@@ -1,3 +1,5 @@
+
+
 -- Desactivamos autocommit y comenzamos una transacción
 SET AUTOCOMMIT=0;
 START TRANSACTION;
