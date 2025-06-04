@@ -1,126 +1,71 @@
+document.addEventListener('DOMContentLoaded', () => {
+     fetchData()
+})
 
-const eventos = [
-    { nombre: "EcoFeria 2025", categoria: "Ferias" },
-    { nombre: "ReforestAcción", categoria: "Voluntariados" },
-    { nombre: "Movilidad Verde", categoria: "Talleres" },
-    { nombre: "Residuo Cero", categoria: "Conferencia" },
-    { nombre: "Energía Limpia Ya", categoria: "Conferencia" },
-    { nombre: "Huertos Urbanos", categoria: "Talleres" },
+const images = [
+  'img/ecoferia.jpg',
+  'img/taller.jpg',
+  'img/MovilidadVerde.jpg'
 ];
 
+// Insertamos el template a la clase carousel-div
+const template = document.getElementById('carousel-template');
+const container = document.querySelector('.carousel-div'); 
+const clone = template.content.cloneNode(true);
+container.appendChild(clone);
 
-const cards = document.querySelectorAll(".card");
-const dots = document.querySelectorAll(".dot");
-const memberName = document.querySelector(".member-name");
-const memberRole = document.querySelector(".member-role");
-const leftArrow = document.querySelector(".nav-arrow.left");
-const rightArrow = document.querySelector(".nav-arrow.right");
-let currentIndex = 0;
-let isAnimating = false;
 
-function updateCarousel(newIndex) {
-    if (isAnimating) return;
-    isAnimating = true;
+const sliderList = document.querySelector('.slider .list');
+const dotsContainer = document.querySelector('.slider .dots');
 
-    currentIndex = (newIndex + cards.length) % cards.length;
+images.forEach((src, index) => {
+  const item = document.createElement('div');
+  item.className = 'item';
 
-    cards.forEach((card, i) => {
-        const offset = (i - currentIndex + cards.length) % cards.length;
+  const img = document.createElement('img');
+  img.src = src;
+  img.alt = `Imagen ${index + 1}`;
 
-        card.classList.remove(
-            "center",
-            "left-1",
-            "left-2",
-            "right-1",
-            "right-2",
-            "hidden"
-        );
+  item.appendChild(img);
+  sliderList.appendChild(item);
 
-        if (offset === 0) {
-            card.classList.add("center");
-        } else if (offset === 1) {
-            card.classList.add("right-1");
-        } else if (offset === 2) {
-            card.classList.add("right-2");
-        } else if (offset === cards.length - 1) {
-            card.classList.add("left-1");
-        } else if (offset === cards.length - 2) {
-            card.classList.add("left-2");
-        } else {
-            card.classList.add("hidden");
-        }
-    });
+  const dot = document.createElement('li');
+  if (index === 0) dot.classList.add('active');
+  dotsContainer.appendChild(dot);
+});
 
-    dots.forEach((dot, i) => {
-        dot.classList.toggle("active", i === currentIndex);
-    });
+const slider = document.querySelector('.slider .list');
+const items = document.querySelectorAll('.slider .item');
+const next = document.getElementById('next');
+const prev = document.getElementById('prev');
+const dots = document.querySelectorAll('.slider .dots li');
 
-    memberName.style.opacity = "0";
-    memberRole.style.opacity = "0";
+let lengthItems = items.length - 1;
+let active = 0;
 
-    setTimeout(() => {
-        memberName.textContent = teamMembers[currentIndex].name;
-        memberRole.textContent = teamMembers[currentIndex].role;
-        memberName.style.opacity = "1";
-        memberRole.style.opacity = "1";
-    }, 300);
+next.onclick = function () {
+  active = active + 1 <= lengthItems ? active + 1 : 0;
+  reloadSlider();
+};
 
-    setTimeout(() => {
-        isAnimating = false;
-    }, 800);
+prev.onclick = function () {
+  active = active - 1 >= 0 ? active - 1 : lengthItems;
+  reloadSlider();
+};
+
+function reloadSlider() {
+  slider.style.left = -items[active].offsetLeft + 'px';
+
+  const lastActive = document.querySelector('.slider .dots li.active');
+  if (lastActive) lastActive.classList.remove('active');
+  dots[active].classList.add('active');
 }
 
-leftArrow.addEventListener("click", () => {
-    updateCarousel(currentIndex - 1);
+dots.forEach((dot, key) => {
+  dot.addEventListener('click', () => {
+    active = key;
+    reloadSlider();
+  });
 });
 
-rightArrow.addEventListener("click", () => {
-    updateCarousel(currentIndex + 1);
-});
-
-dots.forEach((dot, i) => {
-    dot.addEventListener("click", () => {
-        updateCarousel(i);
-    });
-});
-
-cards.forEach((card, i) => {
-    card.addEventListener("click", () => {
-        updateCarousel(i);
-    });
-});
-
-document.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowLeft") {
-        updateCarousel(currentIndex - 1);
-    } else if (e.key === "ArrowRight") {
-        updateCarousel(currentIndex + 1);
-    }
-});
-
-let touchStartX = 0;
-let touchEndX = 0;
-
-document.addEventListener("touchstart", (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-});
-
-document.addEventListener("touchend", (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-});
-
-function handleSwipe() {
-    const swipeThreshold = 50;
-    const diff = touchStartX - touchEndX;
-
-    if (Math.abs(diff) > swipeThreshold) {
-        if (diff > 0) {
-            updateCarousel(currentIndex + 1);
-        } else {
-            updateCarousel(currentIndex - 1);
-        }
-    }
-}
-
-updateCarousel(0);
+window.onresize = reloadSlider;
