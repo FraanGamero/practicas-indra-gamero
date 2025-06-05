@@ -36,6 +36,32 @@ Tambien podemos Observar debajo de la tabla vemos la palabra "Volver". El cual s
 
 ---
 
+Al clickar sobre un evento, como por ejemplo Movilidad Verde, nos llevara a una nueva pagina, en esta nos saldra toda la informacion sobre este. Esta informacion esta guardada en el js de . Tambien podemos observar nuevamente "Volver" el cual nos llevara a la pagina anterior, en este caso evento.html
+
+## Base de Datos
+
+Para poder trabajar en el apartado de base de datos, me organice en 3 pequeñas fases:
+
+1) Análisis inicial: Lectura y comprensión de los requisitos, identificando las entidades principales y sus respectivos atributos.
+
+2) Diseño lógico y conceptual: Creación del Modelo Entidad-Relación (MER) y posterior transformación al Modelo Relacional.
+
+3) Implementación: Construcción de la base de datos en un entorno local,(localhost) utilizando XAMPP, junto con la creación de los scripts SQL necesarios para su funcionamiento.
+
+> [!NOTE] para verlo mas detalladamente puedes ir al README de sql
+
+
+## Base de Datos
+
+Para poder trabajar en el apartado de base de datos, me organice en 3 pequeñas fases:
+
+1) Análisis inicial: Lectura y comprensión de los requisitos, identificando las entidades principales y sus respectivos atributos.
+
+2) Diseño lógico y conceptual: Creación del Modelo Entidad-Relación (MER) y posterior transformación al Modelo Relacional.
+
+3) Implementación: Construcción de la base de datos en un entorno local,(localhost) utilizando XAMPP, junto con la creación de los scripts SQL necesarios para su funcionamiento.
+
+ 
 
 
 
