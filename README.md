@@ -48,18 +48,34 @@ Para poder trabajar en el apartado de base de datos, me organice en 3 pequeñas 
 
 3) Implementación: Construcción de la base de datos en un entorno local,(localhost) utilizando XAMPP, junto con la creación de los scripts SQL necesarios para su funcionamiento.
 
-> [!NOTE] para verlo mas detalladamente puedes ir al README de sql
+> .[!NOTE]. 
+>
+> para verlo mas detalladamente puedes ir al README de sql
 
 
-## Base de Datos
 
-Para poder trabajar en el apartado de base de datos, me organice en 3 pequeñas fases:
 
-1) Análisis inicial: Lectura y comprensión de los requisitos, identificando las entidades principales y sus respectivos atributos.
+## Programacion
 
-2) Diseño lógico y conceptual: Creación del Modelo Entidad-Relación (MER) y posterior transformación al Modelo Relacional.
+En este apartado Programacion, lo primero que hice fue organizar el proyecto, separandolo con la arquitectura M-V-C (Modelo, Vista, Controlador) 
 
-3) Implementación: Construcción de la base de datos en un entorno local,(localhost) utilizando XAMPP, junto con la creación de los scripts SQL necesarios para su funcionamiento.
+- ### Modelo
+En el paqute modelo nos podemos encotrar con 7 clases disintas. Las cuales 6 de ellas son las entidades dadas y sus respectivos atributos.La séptima clase, Modelo.java, se encarga de gestionar los datos creando y almacenando objetos de las entidades mediante estructuras ArrayList
+
+- ### Vista
+
+Dentro del paquete vista nos encontramos con una clase, la cual se encarga de crear, el Menu del programa, haciendo de forma visual las diferentes consultas que puedes hacer
+
+- ### Controlador
+
+Por ultimo, nos encontramos con el paquete controlador. Este, esta definido por dos clases. Controlador.java el cual se encarga de ejecutar todos los metodos creados y Main.java, el cual se encarga de iniciar el programa
+
+
+## Sistemas Informaticos
+
+Para la parte de sistemas informaticos, me he encargado de crear una maquina virtual de Windows 10 usando, Oracle VM Virtual Box. Esta se podra ver en la carpeta doc en [Manual-Virtual-Machine-w10.pdf](doc/Manual-Virtual-Machine-w10.pdf) o pinchando sobre este
+
+
 
  
 
