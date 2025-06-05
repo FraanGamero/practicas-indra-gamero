@@ -30,11 +30,13 @@ Este navbar, esta acompañado a su derecha con 3 textos, Inicio, que tiene la mi
 Esta pagina de Eventos contiene una tabla con los eventos correspondientes Nombres de los eventos y una breve descripcion.  Si hacemos click sobre el nombre del Evento, esta nos llevara a una pagina nueva, la cual solamente nos mostrará el evento al que hayamos clickado.
 
 
-![foto index](img/image2.png)
+![foto eventos](img/image2.png)
 
-Tambien podemos Observar debajo de la tabla vemos la palabra "Volver"
+Tambien podemos Observar debajo de la tabla vemos la palabra "Volver". El cual se encarga de volver a la pagina anterior (index.html) 
 
 ---
+
+
 
 
 
