@@ -1,0 +1,123 @@
+
+:root {
+    --text-color: white;
+    --primary-color: #004254;
+    --bg-claro: #F0E5EB;
+    --bg-table-1: #e2f3f7;
+
+    --bg-table-2: #b1d8e5;
+
+}
+
+
+.slider {
+    width: 650px;             
+    max-width: 100vw;
+    height: 350px;            
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider .list {
+    position: absolute;
+    width: max-content;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    transition: 1s;
+}
+
+.slider .list img {
+    width: 650px;             
+    max-width: 100vw;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider .buttons {
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider .buttons button {
+    width: 30px;               
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    color: var(--primary-color) ;
+    border: none;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.slider .dots {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.slider .dots li {
+    list-style: none;
+    width: 8px;                
+    height: 8px;
+    background-color: #fff;
+    margin: 6px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.slider .dots li.active {
+    width: 20px;
+}
+
+@media(max-width: 900px) {
+    .slider {
+        width: 100%;
+        height: 500px;
+    }
+
+    .slider .list {
+        height: 100%;
+    }
+
+    .slider .list img {
+        width: 100vw;
+        height: 100%;
+    }
+
+    .slider .buttons {
+        top: 40%;
+        width: 100%;
+        left: 0;
+        padding: 0 10px;
+    }
+
+    .slider .buttons button {
+        width: 25px;
+        height: 25px;
+        font-size: 12px;
+    }
+
+    .slider .dots li {
+        width: 6px;
+        height: 6px;
+        margin: 4px;
+    }
+
+    .slider .dots li.active {
+        width: 14px;
+    }
+}

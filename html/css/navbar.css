@@ -1,0 +1,87 @@
+/* Importamos la fuente  */
+@import url('../fonts/font.css');
+
+:root {
+    --text-color: white;
+    --primary-color:#004254;
+}
+
+.img-logo {
+
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+
+}
+
+.img-logo:hover {
+
+    transform: scale(1.25);
+    transition: 0.75s ease;
+}
+
+.navbar-container {
+
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 100px;
+
+
+}
+
+.navbar-list {
+
+    list-style: none;
+    display: flex;
+    gap: 10px;
+
+}
+
+.navbar-list li a {
+
+    position: relative;
+    text-decoration: none;
+
+    font-family: Poppins;
+    font-size: 25px;
+}
+
+.navbar-list li a::after {
+
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.75s ease-out;
+    border-radius: 25%;
+
+}
+
+.navbar-list li a:hover::after {
+
+    width: 100%;
+
+}
+
+.navbar-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (min-width: 500px) {
+    .navbar-list {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .img-logo {
+        width: 120px;
+    }
+}
