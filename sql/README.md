@@ -24,5 +24,6 @@ Asi es como quedarian las relaciones, viendolo desde la pestaña "Designer"
 ## crearUsuariosOrganizadores.sql
 - este contiene la creacion de varios organizadores y usuarios. ademas le otorga los permisos que les haga falta
 
+
 ## agregarDatos.sql
 - este contendra la inserccion de datos
