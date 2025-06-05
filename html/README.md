@@ -18,6 +18,6 @@ Tambien podemos Observar debajo de la tabla vemos la palabra "Volver". El cual s
 ---
 
 Al clickar sobre un evento, como por ejemplo Movilidad Verde, nos llevara a una nueva pagina, en esta nos saldra toda la informacion sobre este. Esta informacion esta guardada en el js de . Tambien podemos observar nuevamente "Volver" el cual nos llevara a la pagina anterior, en este caso evento.html
-![foto detalle](img-rm/img3.png)
+![foto detalle](img-rm/image3.png)
 
 
