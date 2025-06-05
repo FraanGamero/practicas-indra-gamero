@@ -2,15 +2,15 @@
 SET AUTOCOMMIT=0;
 START TRANSACTION;
 
-user portal;
+use portal;
 
 
 -- creamos los usuarios 
-CREATE USER 'miguelangel'@'localhost' IDENTIFIED BY 'miguelangel1234';
-CREATE USER 'enriquemoyano'@'localhost' IDENTIFIED BY 'enrique1234';
-CREATE USER 'frangamero'@'localhost' IDENTIFIED BY 'gamero1234';
-CREATE USER 'pacoacosta'@'localhost' IDENTIFIED BY 'pacoacosta1234';
-CREATE USER 'esturmio'@'localhost' IDENTIFIED BY 'esturmio1234';
+CREATE OR REPLACE USER 'miguelangel'@'localhost' IDENTIFIED BY 'miguelangel1234';
+CREATE OR REPLACE USER 'enriquemoyano'@'localhost' IDENTIFIED BY 'enrique1234';
+CREATE OR REPLACE USER 'frangamero'@'localhost' IDENTIFIED BY 'gamero1234';
+CREATE OR REPLACE USER 'pacoacosta'@'localhost' IDENTIFIED BY 'pacoacosta1234';
+CREATE OR REPLACE USER 'esturmio'@'localhost' IDENTIFIED BY 'esturmio1234';
 
 
 
