@@ -8,21 +8,26 @@ public class MoUsuario {
 	private String emailUsuario;
 	private String contrasenaUsuario;
 
-//	Constructores
+	// Constructores
 	public MoUsuario() {
 
 		// TODO Auto-generated constructor stub
 	}
 
 	public MoUsuario(String nombreUsuario, String emailUsuario, String contrasenaUsuario) {
-		
+
 		this.id = pointer++;
 		this.nombreUsuario = nombreUsuario;
 		this.emailUsuario = emailUsuario;
 		this.contrasenaUsuario = contrasenaUsuario;
 	}
-	
-//	Getteres y setters
+
+	// responsabilidades especificas
+	public String resumenUsuario() {
+		return "Usuario #" + id + ": " + nombreUsuario + " | Email: " + emailUsuario;
+	}
+
+	// Getteres y setters
 
 	public static int getPointer() {
 		return pointer;

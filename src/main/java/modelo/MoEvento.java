@@ -12,13 +12,11 @@ public class MoEvento {
 	private int idUbicacion;
 	private int idOrganizador;
 
-
-//	constructores
+	// constructores
 	public MoEvento() {
 
 		// TODO Auto-generated constructor stub
 	}
-
 
 	public MoEvento(String nombreEvento, String fechaEvento, String lugarEvento, int duracionEvento,
 			int idCategoria, int idUbicacion, int idOrganizador) {
@@ -31,8 +29,20 @@ public class MoEvento {
 		this.idUbicacion = idUbicacion;
 		this.idOrganizador = idOrganizador;
 	}
-	
-//	getters y setters
+
+	// responsabilidades especificas
+
+	public boolean esEventoValido() {
+		return nombreEvento != null && !nombreEvento.isEmpty()
+				&& fechaEvento != null && !fechaEvento.isEmpty()
+				&& lugarEvento != null && !lugarEvento.isEmpty()
+				&& duracionEvento > 0
+				&& idCategoria > 0
+				&& idUbicacion > 0
+				&& idOrganizador > 0;
+	}
+
+	// getters y setters
 
 	public static int getPointer() {
 		return pointer;
