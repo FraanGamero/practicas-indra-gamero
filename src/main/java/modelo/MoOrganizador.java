@@ -8,25 +8,27 @@ public class MoOrganizador {
 	private String tlfOrganizador;
 	private String emailOrganizador;
 
-//    Constructores
+	// Constructores
 	public MoOrganizador() {
 
 		// TODO Auto-generated constructor stub
 	}
 
+	public MoOrganizador(String nombreOrganizador, String tlfOrganizador, String emailOrganizador) {
 
+		this.id = pointer++;
+		this.nombreOrganizador = nombreOrganizador;
+		this.tlfOrganizador = tlfOrganizador;
+		this.emailOrganizador = emailOrganizador;
+	}
 
-public MoOrganizador(String nombreOrganizador, String tlfOrganizador, String emailOrganizador) {
+	// responsabilidades especificas
+	public String mostrarResumen() {
+		return "Organizador #" + id + " - " + nombreOrganizador + " | Tel: " + tlfOrganizador + " | Email: "
+				+ emailOrganizador;
+	}
 
-	this.id = pointer++;
-	this.nombreOrganizador = nombreOrganizador;
-	this.tlfOrganizador = tlfOrganizador;
-	this.emailOrganizador = emailOrganizador;
-}
-
-
-
-//	getters y setters
+	// getters y setters
 	public static int getPointer() {
 		return pointer;
 	}

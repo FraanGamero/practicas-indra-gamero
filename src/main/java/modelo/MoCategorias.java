@@ -6,7 +6,7 @@ public class MoCategorias {
 	private int id;
 	private String NombreCat;
 
-//	constructores
+	// constructores
 
 	public MoCategorias() {
 		// TODO Auto-generated constructor stub
@@ -17,7 +17,12 @@ public class MoCategorias {
 		NombreCat = nombreCat;
 	}
 
-//	getters y setters
+	// asignamos responsabilidades especificas
+	public boolean esNombreValido() {
+		return NombreCat != null && NombreCat.length() >= 3;
+	}
+
+	// getters y setters
 	public static int getPointer() {
 		return pointer;
 	}

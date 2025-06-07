@@ -14,13 +14,19 @@ public class MoUbicacion {
 	}
 
 	public MoUbicacion(String direccion, String tipo) {
-	
+
 		this.id = pointer++;
 		this.direccion = direccion;
 		this.tipo = tipo;
 	}
 
-//	getteres y setters
+	// responsabilidades especificas
+	public boolean esUbicacionValida() {
+		return direccion != null && !direccion.isEmpty()
+				&& tipo != null && !tipo.isEmpty();
+	}
+
+	// getteres y setters
 	public static int getPointer() {
 		return pointer;
 	}
